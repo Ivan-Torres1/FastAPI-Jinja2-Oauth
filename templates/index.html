@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil de Usuario</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="profile-card">
+            <div class="card-header">
+                <h2>{{nameUser}}</h2>
+            </div>
+            <ul class="profile-details">
+                <li>DNI: {{userDni}} </li>
+                <li>Cargo: {{cargoUser}} </li>
+                <li>Permisos : N {{permisoLevelUser}} </li>
+                <li>ID: {{idUser}} </li>
+            </ul>
+            <div class="card-actions">
+                <a href="#" class="btn delete-btn">Eliminar</a>
+                <a href="http://127.0.0.1:8000/user/contact" class="btn contact-btn">Contactar</a>
+                <a href="#" class="btn edit-btn">Editar</a>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="container">
+            <span>&copy; 2024 Ivan corporation | <a href="contacto.html">Contacto</a></span>
+        </div>
+    </footer>
+</body>
+</html>

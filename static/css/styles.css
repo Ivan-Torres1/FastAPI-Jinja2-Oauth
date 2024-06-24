@@ -1,0 +1,96 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7f6;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.profile-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+    padding: 20px;
+}
+
+.card-header {
+    border-bottom: 1px solid #eee;
+    margin-bottom: 15px;
+}
+
+.card-header h2 {
+    margin: 0;
+    color: #333;
+    font-size: 24px;
+}
+
+.profile-details {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 15px 0;
+    color: #555;
+}
+
+.profile-details li {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.profile-details li:last-child {
+    border-bottom: none;
+}
+
+.card-actions {
+    display: flex;
+    justify-content: space-around;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 14px;
+}
+
+.delete-btn {
+    background: #ff4d4d;
+}
+
+.contact-btn {
+    background: #7f95a3;
+}
+
+.edit-btn {
+    background: #7ba589;
+}
+
+.footer {
+    background: #fff;
+    padding: 15px 0;
+    text-align: center;
+    border-top: 1px solid #eee;
+}
+
+.footer span {
+    color: #888;
+    font-size: 14px;
+}
+
+.footer a {
+    color: #4db8ff;
+    text-decoration: none;
+}
