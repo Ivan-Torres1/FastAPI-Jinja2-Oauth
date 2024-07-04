@@ -1,3 +1,18 @@
 env/
 
 _pycache_/
+
+# Archivos de logs y temporales
+*.log
+*.tmp
+
+# Archivos generados por SQLModel, SQLAlchemy, SQL Connector, etc. (ejemplos ficticios)
+/db_migration/
+/config_dynamic.json
+
+# Archivos de configuración local o sensibles (ejemplo ficticio)
+config/config_local.json
+
+# Archivos específicos generados por tu editor o IDE (opcional)
+.idea/
+.vscode/
