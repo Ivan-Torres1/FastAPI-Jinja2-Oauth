@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Usuario - Paso 1</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/register.css') }}?v=1.0">
+</head>
+<body>
+    <div class="container">
+        <div class="form-card">
+            <form id="formUser">
+                <h2>Registro de Usuario - Paso 1</h2>
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+
+                <label for="dni">DNI:</label>
+                <input type="text" id="dni" name="dni" required>
+
+                <label for="contraseña">Contraseña:</label>
+                <input type="password" id="contraseña" name="contraseña" required>
+
+                <button id="buttonext">Siguiente</button>
+            </form>
+        </div>
+    </div>
+    <script src="{{ url_for('static', path='/js/registerp1.js') }}?v=1.2"></script>
+</body>
+</html>

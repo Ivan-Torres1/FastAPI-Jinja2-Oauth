@@ -4,30 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil de Usuario</title>
-    <link rel="stylesheet" href="{{ url_for('static', path='/css/styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/styles.css') }}?v=1.0">
+
 </head>
 <body>
     <div class="container">
         <div class="profile-card">
             <div class="card-header">
-                <h2>{{nameUser}}</h2>
+                <h2 class="title-name">{{id}}</h2>
             </div>
             <ul class="profile-details">
-                <li>Gmail: {{userGmail}} </li>
-                <li>Number: {{numberUser}} </li>
-                <li>Auxiliar: {{auxNumberUser}} </li>
-                <li>Instagram: {{igUser}} </li>
-                <li>ID: {{idUser}} </li>
+                <li>Gmail: {{gmail}} </li>
+                <li>Number: {{telefono}} </li>
+                <li>Auxiliar: {{telefono_auxiliar}} </li>
+                <li>Instagram: {{redes_sociales}} </li>
             </ul>
             <div class="card-actions">
                 <a href="#" class="btn delete-btn">Eliminar</a>
-                <a href="http://127.0.0.1:8000/user/" class="btn edit-btn">Volver</a>
+                <a href="http://127.0.0.1:8000/iniciosesion" class="btn edit-btn">Volver</a>
             </div>
         </div>
     </div>
     <footer class="footer">
         <div class="container">
-            <span>&copy; 2024 Ivan corporation | <a href="contacto.html">Contacto</a></span>
+            <span>&copy; 2024 Ivan corporation | <a href="#">Contacto</a></span>
         </div>
     </footer>
 </body>

@@ -24,6 +24,7 @@ class Usuarios(SQLModel, table=True):
     cargo_empresa: Optional[str] = None
     nivel_permisos: Optional[int] = None
     dni: str
+    contraseña: str
 
 class Perfil_usuarios(SQLModel, table=True):
     id: Optional[int] = Field(default=None, primary_key=True)
@@ -45,14 +46,47 @@ def get_user(id:int):
             return user.dict()
 
 
+def get_infoUser(id:int):
+    with Session(engine) as session:
+        selection = select(Perfil_usuarios).where(Perfil_usuarios.id == id)
+        user = session.exec(selection).first()
+        if user is None:
+            return None
+        else:
+            return user.dict()
+
+
+def verify_user(user_dni):
+    with Session(engine) as session:
+        date = session.exec(select(Usuarios.id).where(Usuarios.dni == user_dni)).first()
+
+    if date:
+        raise HTTPException(status_code=406,
+                        detail="USUARIO YA CREADO.",
+                        headers={"ERROR":"NOT ACCEPTABLE"})
+
+
+def post_user(user):
+    verify_user(user_dni=user.dni)
+    with Session(engine) as session:
+        user_post = Usuarios(nombre=user.nombre,dni=user.dni,contraseña=user.contraseña)
+        session.add(user_post)
+        session.commit()
+        
+        
+
 
 
 # Prueba
 # with Session(engine) as session:
 #     selection = select(Usuarios,Perfil_usuarios).join(Perfil_usuarios,
-#      Perfil_usuarios.usuario_id == Usuarios.id)
-#     user = session.exec(selection).first()
-#     print(user[1].telefono)
+#     Perfil_usuarios.usuario_id == Usuarios.id)
+#     user = session.exec(selection)
+#     print("----------------------------------------")
+#     print("----------------------------------------")
+#     print(user)
+#     print("----------------------------------------")
+#     print("----------------------------------------")
 
 
 

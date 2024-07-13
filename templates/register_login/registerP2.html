@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Usuario - Paso 2</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/register.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="form-card">
+            <form>
+                <h2>Registro de Usuario - Paso 2</h2>
+                <label for="gmail">Gmail:</label>
+                <input type="email" id="gmail" name="gmail" required>
+
+                <label for="telefono">Teléfono:</label>
+                <input type="text" id="telefono" name="telefono" required>
+
+                <label for="telefono_auxiliar">Teléfono Auxiliar:</label>
+                <input type="text" id="telefono_auxiliar" name="telefono_auxiliar" required>
+
+                <label for="instagram">Instagram:</label>
+                <input type="text" id="instagram" name="instagram" required>
+
+                <button type="submit">Registrar</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

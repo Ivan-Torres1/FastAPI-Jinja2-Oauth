@@ -50,7 +50,7 @@ input {
 .login-button {
     width: 100%;
     padding: 10px;
-    background-color: #0288d1;
+    background-color: #ff4d4d;
     color: #ffffff;
     border: none;
     border-radius: 5px;
@@ -59,7 +59,7 @@ input {
 }
 
 .login-button:hover {
-    background-color: #0277bd;
+    background-color: #ff4d4d;
 }
 
 .links {

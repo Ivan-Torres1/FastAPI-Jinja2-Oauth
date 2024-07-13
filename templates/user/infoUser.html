@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil de Usuario</title>
-    <link rel="stylesheet" href="{{ url_for('static', path='/css/styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/styles.css') }}?v=1.0">
+
 </head>
 <body>
     <div class="container">
@@ -20,7 +21,7 @@
             </ul>
             <div class="card-actions">
                 <a href="#" class="btn delete-btn">Eliminar</a>
-                <a href="http://127.0.0.1:8000/user/contact" class="btn contact-btn">Contactar</a>
+                <a href="http://127.0.0.1:8000/user/contact/{{id}}" class="btn contact-btn">Contactar</a>
                 <a href="#" class="btn edit-btn">Editar</a>
             </div>
         </div>

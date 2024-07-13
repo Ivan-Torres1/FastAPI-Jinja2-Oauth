@@ -1,6 +1,6 @@
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f4f7f6;
+    background-color: #ffffff;
     margin: 0;
     padding: 0;
     display: flex;
@@ -33,7 +33,7 @@ body {
 .card-header h2 {
     margin: 0;
     color: #333;
-    font-size: 24px;
+    font-size: 34px;
 }
 
 .profile-details {
