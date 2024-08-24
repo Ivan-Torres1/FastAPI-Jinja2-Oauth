@@ -9,7 +9,7 @@
 <body>
     <div class="container">
         <div class="form-card">
-            <form>
+            <form id="formPerfil">
                 <h2>Registro de Usuario - Paso 2</h2>
                 <label for="gmail">Gmail:</label>
                 <input type="email" id="gmail" name="gmail" required>
@@ -27,5 +27,6 @@
             </form>
         </div>
     </div>
+    <script src="{{ url_for('static', path='/js/registerp2.js') }}?v=1.2"></script>
 </body>
 </html>

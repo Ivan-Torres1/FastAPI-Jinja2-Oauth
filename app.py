@@ -1,8 +1,11 @@
-from fastapi import FastAPI,Request,HTTPException
+from fastapi import FastAPI,Request,HTTPException, Depends
 from fastapi.responses import HTMLResponse,JSONResponse
 from fastapi.templating import Jinja2Templates
 from fastapi.staticfiles import StaticFiles
+
 from conexionDB import *
+
+
 
 
 
@@ -17,6 +20,8 @@ Hacer una aplicacion donde insertando el ID de un usuario,puedas tener una web c
 
 
 app = FastAPI()
+
+
 
 templates = Jinja2Templates(directory="templates")
 app.mount("/static", StaticFiles(directory="static"), name="static")
@@ -53,26 +58,27 @@ async def sesion(request:Request):
 
 
 
-# -----------------------------------
+# -------------------------------REGISTER USERS-----------------------------------
 
 @app.get("/register-1", response_class=HTMLResponse)
 async def register(request:Request):
     return templates.TemplateResponse("register_login/registerP1.html",{"request":request})
+
 
 @app.get("/register-2", response_class=HTMLResponse)
 async def register(request:Request):
     return templates.TemplateResponse("register_login/registerP2.html",{"request":request})
 
 # ----------
-@app.post("/register/user")
-async def form_submit(user: Usuarios):
-    print(user)
-    # try:
-    user = Usuarios(nombre=user.nombre, dni=user.dni,contraseña=user.contraseña)
-    post_user(user)
-    # except ValidationError as e:
-
-    #     raise HTTPException(status_code=422, detail=e.errors())
+@app.post("/register/user_complete")
+async def form_1(user_complete : dict):
+    print(user_complete)
+    return {"sucess": True,"First Section": "Complete"}
     
-    return JSONResponse(content={"success": True, "message": "¡User create!"})
 
+
+
+
+
+
+# PROBAR CON MANEJARLO DESDE EL JS

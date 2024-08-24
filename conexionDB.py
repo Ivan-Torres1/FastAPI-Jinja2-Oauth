@@ -1,6 +1,8 @@
 from typing import Optional, List
 from sqlmodel import Field, SQLModel, Relationship,create_engine,Session,select
 from envparse import Env
+from fastapi import HTTPException
+from pydantic import ValidationError
 import mysql.connector
 
 pathEnv = "config/.env"
@@ -55,7 +57,7 @@ def get_infoUser(id:int):
         else:
             return user.dict()
 
-
+# -------------------------------------USUARIO--------------------------- 
 def verify_user(user_dni):
     with Session(engine) as session:
         date = session.exec(select(Usuarios.id).where(Usuarios.dni == user_dni)).first()
@@ -72,30 +74,10 @@ def post_user(user):
         user_post = Usuarios(nombre=user.nombre,dni=user.dni,contraseña=user.contraseña)
         session.add(user_post)
         session.commit()
-        
-        
-
-
-
-# Prueba
-# with Session(engine) as session:
-#     selection = select(Usuarios,Perfil_usuarios).join(Perfil_usuarios,
-#     Perfil_usuarios.usuario_id == Usuarios.id)
-#     user = session.exec(selection)
-#     print("----------------------------------------")
-#     print("----------------------------------------")
-#     print(user)
-#     print("----------------------------------------")
-#     print("----------------------------------------")
 
 
 
 
-
-
-#     session.add(user)
-#     session.add(infoUser)
-#     session.commit()   
 
 
 
